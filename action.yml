@@ -1,0 +1,36 @@
+name: 'Remote Commands over SSH'
+description: 'Execute remote commands on bash over SSH'
+
+inputs:
+  host:
+    description: 'Host for SSH connection'
+    required: true
+  port:
+    description: 'Port for SSH connection'
+    default: '22'
+  username:
+    description: 'Username for SSH connection'
+    required: true
+  password:
+    description: 'Password for SSH connection'
+  private_key:
+    description: 'Private Key path for SSH connection'
+    default: ''
+  timeout:
+    description: 'Timeout in seconds for establishing SSH connection'
+    default: '120'
+  script:
+    description: 'Commands to execute on SSH connection'
+    default: 'echo "Connection established"'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.host }}
+    - ${{ inputs.port }}
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.private_key }}
+    - ${{ inputs.timeout }}
+    - ${{ inputs.script }}
