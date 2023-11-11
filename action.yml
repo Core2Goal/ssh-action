@@ -34,3 +34,7 @@ runs:
     - ${{ inputs.private_key }}
     - ${{ inputs.timeout }}
     - ${{ inputs.script }}
+
+branding:
+  icon: 'code'
+  color: 'blue'
