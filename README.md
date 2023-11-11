@@ -25,7 +25,7 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: Core2Goal/ssh-action@main
+      - uses: Core2Goal/ssh-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
@@ -45,7 +45,7 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: Core2Goal/ssh-action@main
+      - uses: Core2Goal/ssh-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
